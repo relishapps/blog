@@ -12,11 +12,11 @@ class Blog(View):
         else:
             posts = Post.objects.filter(published=True)
 
-        return render('djangorelishblog/blog.html', {'posts': posts}, context_instance=RequestContext(request))
+        return render(request, 'blog.html', {'posts': posts}, RequestContext(request))
 
 
 class BlogPost(View):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
-        return render('djangorelishblog/post.html', {'post': post}, context_instance=RequestContext(request))
+        return render(request, 'post.html', {'post': post}, RequestContext(request))

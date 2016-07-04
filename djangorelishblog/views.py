@@ -1,18 +1,23 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.base import View
+from django.views.generic.list import ListView
 from django.template import RequestContext
 
 from .models import Post
 
 
-class Blog(View):
-    def get(self, request):
+class Blog(ListView):
+    model = Post
+    template_name = 'djangorelishblog/blog.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self, request):
         if request.user.is_authenticated():
             posts = Post.objects.all()
         else:
             posts = Post.objects.filter(published=True)
 
-        return render(request, 'djangorelishblog/blog.html', {'posts': posts}, RequestContext(request))
+        return posts
 
 
 class BlogPost(View):

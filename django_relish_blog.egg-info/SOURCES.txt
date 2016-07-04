@@ -1,6 +1,7 @@
 README.rst
 setup.py
 django-relish-blog/__init__.py
+django-relish-blog/apps.py
 django-relish-blog/models.py
 django-relish-blog/tests.py
 django-relish-blog/urls.py

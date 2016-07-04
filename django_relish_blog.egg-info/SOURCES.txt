@@ -1,11 +1,10 @@
 README.rst
 setup.py
 django-relish-blog/__init__.py
-django-relish-blog/blog/__init__.py
-django-relish-blog/blog/models.py
-django-relish-blog/blog/tests.py
-django-relish-blog/blog/urls.py
-django-relish-blog/blog/views.py
+django-relish-blog/models.py
+django-relish-blog/tests.py
+django-relish-blog/urls.py
+django-relish-blog/views.py
 django_relish_blog.egg-info/PKG-INFO
 django_relish_blog.egg-info/SOURCES.txt
 django_relish_blog.egg-info/dependency_links.txt

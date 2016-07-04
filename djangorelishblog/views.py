@@ -11,7 +11,7 @@ class Blog(ListView):
     template_name = 'djangorelishblog/blog.html'
     context_object_name = 'posts'
 
-    def get_queryset(self, request):
+    def get_queryset(self):
         if request.user.is_authenticated():
             posts = Post.objects.all()
         else:

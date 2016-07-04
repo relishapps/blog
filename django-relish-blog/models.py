@@ -1,7 +1,7 @@
 import re
 
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.conf import settings
 from django.contrib import admin
 from django.core.urlresolvers import reverse
 
@@ -13,7 +13,7 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class Post(models.Model):
-    author = models.ForeignKey(get_user_model(), related_name='posts')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='posts')
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255)
     body = models.TextField()

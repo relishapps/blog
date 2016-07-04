@@ -13,12 +13,12 @@ Quick start
 
     INSTALLED_APPS = [
         ...
-        'blog',
+        'djangorelishblog',
     ]
 
 2. Include the blog URLconf in your project urls.py like this::
 
-    url(r'^', include('blog.urls')),
+    url(r'^blog/', include('djangorelishblog.urls')),
 
 3. Run `python manage.py migrate` to create the blog models.
 

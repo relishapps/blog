@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class DjangoRelishBlogConfig(AppConfig):
-    name = 'django-relish-blog'
+    name = 'djangorelishblog'

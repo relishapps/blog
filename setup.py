@@ -1,53 +1,34 @@
-"""A setuptools based setup module.
+import os
+from setuptools import find_packages, setup
 
-See:
-https://packaging.python.org/en/latest/distributing.html
-https://github.com/pypa/sampleproject
-"""
+with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
+    README = readme.read()
 
-# Always prefer setuptools over distutils
-from setuptools import setup, find_packages
-# To use a consistent encoding
-from codecs import open
-from os import path
-
-here = path.abspath(path.dirname(__file__))
-
-# Get the long description from the README file
-with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
-    long_description = f.read()
+# allow setup.py to be run from any path
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='relish-django-blog',
-    version='1.0.0a4',
-    description='A simple blog app for Django',
-    long_description=long_description,
+    name='django-relish-blog',
+    version='1.0.0a5',
+    packages=find_packages(),
+    include_package_data=True,
+    license='BSD License',  # example license
+    description='A simple Django app to add a blog to a website.',
+    long_description=README,
+    url='https://www.relish.io/',
     author='Pawel Decowski',
     author_email='pawel@relish.io',
-
-    # Choose your license
-    license='MIT',
-
-    # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        # How mature is this project? Common values are
-        #   3 - Alpha
-        #   4 - Beta
-        #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Framework :: Django :: 1.9',  # replace "X.Y" as appropriate
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: BSD License',  # example license
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
+        # Replace these appropriately if you are stuck on Python 2.
         'Programming Language :: Python :: 2.7',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    keywords='simple blog django',
-    packages=find_packages(),
 )

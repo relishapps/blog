@@ -1,0 +1,51 @@
+Metadata-Version: 1.1
+Name: relish-django-blog
+Version: 1.0.0a4
+Summary: A simple blog app for Django
+Home-page: UNKNOWN
+Author: Pawel Decowski
+Author-email: pawel@relish.io
+License: MIT
+Description: =====
+        Blog
+        =====
+        
+        Blog is a simple Django app to have a blog on your site.
+        
+        Detailed documentation is in the "docs" directory.
+        
+        Quick start
+        -----------
+        
+        1. Add "blog" to your INSTALLED_APPS setting like this::
+        
+            INSTALLED_APPS = [
+                ...
+                'blog',
+            ]
+        
+        2. Include the blog URLconf in your project urls.py like this::
+        
+            url(r'^', include('blog.urls')),
+        
+        3. Run `python manage.py migrate` to create the blog models.
+        
+        4. Start the development server and visit http://127.0.0.1:8000/admin/
+           to create a blog (you'll need the Admin app enabled).
+        
+        5. Visit http://127.0.0.1:8000/blog/ to view the blog.
+Keywords: simple blog django
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.9
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content

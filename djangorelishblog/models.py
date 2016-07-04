@@ -2,14 +2,9 @@ import re
 
 from django.db import models
 from django.conf import settings
-from django.contrib import admin
 from django.core.urlresolvers import reverse
 
 more_link_re = re.compile('\[\[ *MORE_LINK *]]', re.I)
-
-
-class PostAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("title",)}
 
 
 class Post(models.Model):
@@ -38,7 +33,3 @@ class Comment(models.Model):
     author_email = models.EmailField()
     author_website = models.URLField(blank=True, null=True)
     body = models.TextField()
-
-
-admin.site.register(Post, PostAdmin)
-admin.site.register(Comment)

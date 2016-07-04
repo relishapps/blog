@@ -1,3 +1,4 @@
+MANIFEST.in
 README.rst
 setup.py
 djangorelishblog/__init__.py
@@ -10,3 +11,7 @@ djangorelishblog.egg-info/PKG-INFO
 djangorelishblog.egg-info/SOURCES.txt
 djangorelishblog.egg-info/dependency_links.txt
 djangorelishblog.egg-info/top_level.txt
+djangorelishblog/migrations/0001_initial.py
+djangorelishblog/templates/.DS_Store
+djangorelishblog/templates/djangorelishblog/blog.html
+djangorelishblog/templates/djangorelishblog/post.html

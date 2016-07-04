@@ -12,7 +12,7 @@ class Blog(ListView):
     context_object_name = 'posts'
 
     def get_queryset(self):
-        if request.user.is_authenticated():
+        if self.request.user.is_authenticated():
             posts = Post.objects.all()
         else:
             posts = Post.objects.filter(published=True)

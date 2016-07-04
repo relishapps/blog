@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='djangorelishblog',
-    version='1.0.0a10',
+    version='1.0.0a11',
     packages=find_packages(),
     include_package_data=True,
     license='BSD License',  # example license

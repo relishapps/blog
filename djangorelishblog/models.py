@@ -51,7 +51,7 @@ class Comment(models.Model):
     author_name = models.CharField(max_length=64)
     author_email = models.EmailField()
     author_website = models.URLField(blank=True, null=True)
-    body = MarkdownxField()
+    body = models.TextField()
     created_on = models.DateField(auto_now_add=True)
 
     def __unicode__(self):

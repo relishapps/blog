@@ -1,4 +1,8 @@
+{% load md2 %}
 {% if post %}
-    <h3>{{ post.title }}</h3> by {{ post.author }}
-    <p>{{ post.body }}</p>
+    <div class="post">
+        <h2>{{ post.title }}</h2>
+        <p class="meta">{{ post.author }}</p>
+        <p>{{ post.body|markdown }}</p>
+    </div>
 {% endif %}

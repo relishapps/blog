@@ -13,7 +13,7 @@
             {{ comment_form.as_p }}
             <input type="submit" value="Submit" />
         </form>
-        {% for comment in post.comments %}
+        {% for comment in post.comments.all %}
             <div class="comment">
                 <p>{{ comment.body }}</p>
                 <p class="meta">Posted by {{ comment.author_name }} on {{ comment.created_on|date }}</p>

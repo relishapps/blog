@@ -13,6 +13,7 @@ Quick start
 
     INSTALLED_APPS = [
         ...
+        'django.contrib.humanize',
         'djangorelishblog',
         'markdownx',
     ]

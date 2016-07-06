@@ -11,17 +11,20 @@ Quick start
 
 1. Add **django.contrib.humanize**, **djangorelishblog** and **markdownx** to your `INSTALLED_APPS` setting:
 
-    INSTALLED_APPS = [
-        ...
-        'django.contrib.humanize',
-        'djangorelishblog',
-        'markdownx',
-    ]
+```python
+INSTALLED_APPS = [
+    ...
+    'django.contrib.humanize',
+    'djangorelishblog',
+    'markdownx',
+]```
 
 2. Include the **djangorelishblog** and **mardownx** URLconf in your project urls.py:
 
-    url(r'^blog/', include('djangorelishblog.urls')),
-    url(r'^markdownx/', include('markdownx.urls')),
+```python
+url(r'^blog/', include('djangorelishblog.urls')),
+url(r'^markdownx/', include('markdownx.urls')),
+```
 
 3. Run `python manage.py collectstatic` to setup **markdownx**.
 

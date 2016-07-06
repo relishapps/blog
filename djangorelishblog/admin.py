@@ -1,8 +1,10 @@
 from django.contrib import admin
+from django.db import models
 from .models import Post, Comment
+from markdownx.admin import MarkdownxModelAdmin
 
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(MarkdownxModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
 
 

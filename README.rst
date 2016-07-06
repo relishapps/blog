@@ -1,15 +1,15 @@
 =====
-Blog
+djangorelishblog
 =====
 
-Blog is a simple Django app to have a blog on your site.
+djangorelishblog is a simple Django app to have a blog on your site.
 
 Detailed documentation is in the "docs" directory.
 
 Quick start
 -----------
 
-1. Add 'djangorelishblog' and 'markdownx' to your INSTALLED_APPS setting like this::
+1. Add **django.contrib.humanize**, **djangorelishblog** and **markdownx** to your `INSTALLED_APPS` setting:
 
     INSTALLED_APPS = [
         ...
@@ -18,12 +18,12 @@ Quick start
         'markdownx',
     ]
 
-2. Include the 'djangorelishblog' and 'mardownx' URLconf in your project urls.py like this::
+2. Include the **djangorelishblog** and **mardownx** URLconf in your project urls.py:
 
     url(r'^blog/', include('djangorelishblog.urls')),
     url(r'^markdownx/', include('markdownx.urls')),
 
-3. Run `python manage.py collectstatic` to setup 'markdownx'.
+3. Run `python manage.py collectstatic` to setup **markdownx**.
 
 4. Run `python manage.py migrate` to create the blog models.
 

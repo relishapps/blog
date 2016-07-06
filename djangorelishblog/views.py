@@ -7,7 +7,7 @@ from .models import Post, Comment
 from .forms import CommentForm
 
 
-class Blog(ListView):
+class BlogView(ListView):
     model = Post
     template_name = 'djangorelishblog/blog.html'
     context_object_name = 'posts'
@@ -16,7 +16,7 @@ class Blog(ListView):
         return Post.objects.published()
 
 
-class BlogPost(View):
+class BlogPostView(View):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 

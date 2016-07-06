@@ -19,3 +19,4 @@ djangorelishblog/migrations/__init__.py
 djangorelishblog/templates/.DS_Store
 djangorelishblog/templates/djangorelishblog/blog.html
 djangorelishblog/templates/djangorelishblog/post.html
+docs/README.md

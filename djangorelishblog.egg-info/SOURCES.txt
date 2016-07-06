@@ -11,6 +11,7 @@ djangorelishblog/views.py
 djangorelishblog.egg-info/PKG-INFO
 djangorelishblog.egg-info/SOURCES.txt
 djangorelishblog.egg-info/dependency_links.txt
+djangorelishblog.egg-info/requires.txt
 djangorelishblog.egg-info/top_level.txt
 djangorelishblog/migrations/0001_initial.py
 djangorelishblog/migrations/__init__.py

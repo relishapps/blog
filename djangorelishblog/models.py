@@ -4,6 +4,8 @@ from django.db import models
 from django.conf import settings
 from django.core.urlresolvers import reverse
 
+from markdownx.models import MarkdownxField
+
 more_link_re = re.compile('\[\[ *MORE_LINK *]]', re.I)
 
 
@@ -11,7 +13,7 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='posts')
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255)
-    body = models.TextField()
+    body = MarkdownxField()
     published = models.BooleanField()
 
     @property

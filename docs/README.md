@@ -33,14 +33,16 @@
 * `author` - ForeignKey to `USER_AUTH_MODEL` in settings.
 * `title` - CharField with a max length of 255.
 * `slug` - SlugField with a max length of 255.
+* `intro` - MarkdownxField.
 * `body` - MarkdownxField.
 * `published` - BooleanField to say whether the post is viewable to everyone or not.
 * `created_on` - DateField with `auto_now_add` set to `True`.
 
 ##### Virtual properties
-* `intro` - returns a string representing a short extract of the body, up to the `[[ MORE_LINK ]]` tag.
-* `full_body` - returns a string replacing the `[[ MORE_LINK ]]` tag.
 * `url` - returns a string of the full URL of the post.
+
+##### Methods
+* `content()` - concatenates the `intro` and `body` fields, and separates them with 2 line returns (`\n\n`).
 
 ##### Manager
 The `Post` model uses a custom objects manager that adds a couple of handy methods.
@@ -49,8 +51,7 @@ The `Post` model uses a custom objects manager that adds a couple of handy metho
 
 ###### Notes
 * If you use a User model other than the standard Django User model, add `USER_AUTH_MODEL = <model name>` in your Django settings file.
-* Place `[[ MORE_LINK ]]` tag part way through the body which will show as the intro to the post. This tag is removed in `full_body`.
-* When presenting the post, use `full_body` instead of `body` as it will remove the `[[ MORE_LINK ]]` tag.
+* When presenting the post, use the `content()` as it will concatenate the `intro` and `body` fields, and separates them with 2 line returns (`\n\n`).
 * When saving a `Post` object, ommit the `created_on` parameter as it will automatically be set by Django.
 
 #### Comment

@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse
 
 from markdownx.models import MarkdownxField
 
-more_link_re = re.compile('\[\[ *MORE_LINK *]]', re.I)
+more_link_re = re.compile('\[\[ MORE_LINK \]\]', re.I)
 
 
 class PostQuerySet(models.QuerySet):

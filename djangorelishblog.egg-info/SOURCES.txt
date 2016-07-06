@@ -1,5 +1,5 @@
 MANIFEST.in
-README.rst
+README.md
 setup.py
 djangorelishblog/__init__.py
 djangorelishblog/admin.py
@@ -19,4 +19,3 @@ djangorelishblog/migrations/__init__.py
 djangorelishblog/templates/.DS_Store
 djangorelishblog/templates/djangorelishblog/blog.html
 djangorelishblog/templates/djangorelishblog/post.html
-docs/README.md

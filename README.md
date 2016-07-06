@@ -1,4 +1,8 @@
-# djangorelishblog
+=====
+djangorelishblog
+=====
+
+djangorelishblog is a simple Django app to have a blog on your site.
 
 ### Install
 

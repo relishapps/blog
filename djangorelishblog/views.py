@@ -34,6 +34,6 @@ class BlogPost(View):
             comment.post = post
             comment.save()
 
-            return redirect('blog_post', kwargs={'slug': slug})
+            return redirect('blog_post', slug=slug)
 
         return render(request, 'djangorelishblog/post.html', {'post': post, 'comment_form': comment_form}, RequestContext(request))

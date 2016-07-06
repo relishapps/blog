@@ -1,1 +1,2 @@
 django-markdownx
+django_markdown2

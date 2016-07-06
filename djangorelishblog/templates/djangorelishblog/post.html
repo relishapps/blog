@@ -15,7 +15,7 @@
         </form>
         {% for comment in post.comments.all %}
             <div class="comment">
-                <p>{{ comment.body }}</p>
+                <p>{{ comment.body|linebreaks }}</p>
                 <p class="meta">Posted by {{ comment.author_name }} on {{ comment.created_on|date }}</p>
             </div>
         {% empty %}

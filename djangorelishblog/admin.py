@@ -5,6 +5,7 @@ from markdownx.admin import MarkdownxModelAdmin
 
 
 class PostAdmin(MarkdownxModelAdmin):
+    list_display = ('title', 'created_on')
     prepopulated_fields = {"slug": ("title",)}
 
 

@@ -4,5 +4,5 @@ from .views import Blog, BlogPost
 
 urlpatterns = [
     url(r'^$', Blog.as_view(), name='blog'),
-    url(r'^([a-z0-9-]+)/$', BlogPost.as_view(), name='blog_post')
+    url(r'^(?P<slug>[a-z0-9-]+)/$', BlogPost.as_view(), name='blog_post')
 ]

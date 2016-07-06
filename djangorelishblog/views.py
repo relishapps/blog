@@ -20,7 +20,7 @@ class BlogPost(View):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
-        comment_form = CommentForm(post=post)
+        comment_form = CommentForm()
 
         return render(request, 'djangorelishblog/post.html', {'post': post, 'comment_form': comment_form}, RequestContext(request))
 

@@ -28,10 +28,11 @@ class BlogPost(View):
         post = get_object_or_404(Post, slug=slug)
 
         comment_form = CommentForm(request.POST)
-        comment_form.post = post
 
         if comment_form.is_valid():
-            comment_form.save()
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
 
             return redirect('blog_post', kwargs={'slug': slug})
 

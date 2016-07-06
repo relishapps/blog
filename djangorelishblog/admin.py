@@ -8,6 +8,7 @@ class CommentInline(admin.StackedInline):
     extra = 0
     readonly_fields = ('author_name', 'author_email', 'author_website', 'body', 'created_on')
     can_delete = True
+    classes = ['collapse']
 
 
 class PostAdmin(MarkdownxModelAdmin):

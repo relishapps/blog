@@ -22,7 +22,7 @@ class BlogPostView(View):
 
         comment_form = CommentForm()
 
-        return render(request, 'djangorelishblog/post.html', {'post': post, 'comment_form': comment_form}, RequestContext(request))
+        return render(request, 'djangorelishblog/post.html', {'post': post, 'post_content': post.content(), 'comment_form': comment_form}, RequestContext(request))
 
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
@@ -36,4 +36,4 @@ class BlogPostView(View):
 
             return redirect('blog_post', slug=slug)
 
-        return render(request, 'djangorelishblog/post.html', {'post': post, 'comment_form': comment_form}, RequestContext(request))
+        return render(request, 'djangorelishblog/post.html', {'post': post, 'post_content': post.content(), 'comment_form': comment_form}, RequestContext(request))

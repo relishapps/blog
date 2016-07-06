@@ -9,12 +9,23 @@ from markdownx.models import MarkdownxField
 more_link_re = re.compile('\[\[ *MORE_LINK *]]', re.I)
 
 
+class PostQuerySet(models.QuerySet):
+    def published(self):
+        return self.filter(published=True)
+
+    def unpublished(self):
+        return self.filter(published=False)
+
+
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='posts')
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255)
     body = MarkdownxField()
     published = models.BooleanField()
+    created_on = models.DateField(auto_now_add=True)
+
+    objects = PostQuerySet.as_manager()
 
     @property
     def intro(self):
@@ -27,6 +38,12 @@ class Post(models.Model):
     @property
     def url(self):
         return reverse('blog_post', args=[self.slug])
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['-created_on']
 
 
 class Comment(models.Model):

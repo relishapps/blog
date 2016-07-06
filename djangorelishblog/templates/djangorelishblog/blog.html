@@ -5,6 +5,7 @@
     <div class="post">
         <h3>{{ post.title }}</h3>
         {{ post.intro|markdown }}
+        <a href="{{ post.url }}">Read more…</a>
         <p class="meta"><a href="{{ post.url }}">by {{ post.author }} on {{ post.created_on|date }}</a></p>
     </div>
 

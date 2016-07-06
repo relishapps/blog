@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.base import View
 from django.views.generic.list import ListView
 from django.template import RequestContext
 
-from .models import Post
+from .models import Post, Comment
+from .forms import CommentForm
 
 
 class Blog(ListView):
@@ -12,16 +13,25 @@ class Blog(ListView):
     context_object_name = 'posts'
 
     def get_queryset(self):
-        if self.request.user.is_authenticated():
-            posts = Post.objects.all()
-        else:
-            posts = Post.objects.filter(published=True)
-
-        return posts
+        return Post.objects.published()
 
 
 class BlogPost(View):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
-        return render(request, 'djangorelishblog/post.html', {'post': post}, RequestContext(request))
+        comment_form = CommentForm(post=post)
+
+        return render(request, 'djangorelishblog/post.html', {'post': post, 'comment_form': comment_form}, RequestContext(request))
+
+    def post(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+
+        comment_form = CommentForm(request.POST)
+
+        if comment_form.is_valid():
+            comment_form.save()
+
+            return redirect('blog_post', kwargs={'slug': slug})
+
+        return render(request, 'djangorelishblog/post.html', {'post': post, 'comment_form': comment_form}, RequestContext(request))

@@ -51,4 +51,8 @@ class Comment(models.Model):
     author_name = models.CharField(max_length=64)
     author_email = models.EmailField()
     author_website = models.URLField(blank=True, null=True)
-    body = models.TextField()
+    body = MarkdownxField()
+    created_on = models.DateField(auto_now_add=True)
+
+    def __unicode__(self):
+        return '%s on %s' % (self.author_name, self.created_on)

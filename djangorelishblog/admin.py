@@ -3,8 +3,13 @@ from .models import Post, Comment
 from markdownx.admin import MarkdownxModelAdmin
 
 
+class CommentInline(admin.StackedInline):
+    model = Comment
+
+
 class PostAdmin(MarkdownxModelAdmin):
-    list_display = ('title', 'created_on')
+    inlines = [CommentInline]
+    list_display = ('title', 'created_on', 'published')
     prepopulated_fields = {"slug": ("title",)}
 
 

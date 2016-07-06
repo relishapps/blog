@@ -7,4 +7,19 @@
         <p class="meta">by {{ post.author }} on {{ post.created_on|date }}</p>
         <p>{{ post.body|markdown:"safe, code-friendly, code-color" }}</p>
     </div>
+
+    <div class="comments">
+        <form action="" method="post">{% csrf_token %}
+            {{ comment_form.as_p }}
+            <input type="submit" value="Submit" />
+        </form>
+        {% for comment in post.comments %}
+            <div class="comment">
+                <p>{{ comment.body }}</p>
+                <p class="meta">Posted by {{ comment.author_name }} on {{ comment.created_on|date }}</p>
+            </div>
+        {% empty %}
+            <p>This post has no comments yet</p>
+        {% endfor %}
+    </div>
 {% endif %}

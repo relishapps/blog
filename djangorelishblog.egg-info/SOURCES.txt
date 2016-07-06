@@ -4,6 +4,7 @@ setup.py
 djangorelishblog/__init__.py
 djangorelishblog/admin.py
 djangorelishblog/apps.py
+djangorelishblog/forms.py
 djangorelishblog/models.py
 djangorelishblog/tests.py
 djangorelishblog/urls.py

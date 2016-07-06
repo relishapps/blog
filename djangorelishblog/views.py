@@ -27,7 +27,8 @@ class BlogPost(View):
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
-        comment_form = CommentForm(request.POST, post=post)
+        comment_form = CommentForm(request.POST)
+        comment_form.post = post
 
         if comment_form.is_valid():
             comment_form.save()

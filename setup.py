@@ -34,5 +34,6 @@ setup(
     install_requires=[
         'django-markdownx',
         'django_markdown2',
+        'django-akismet-comments',
     ],
 )

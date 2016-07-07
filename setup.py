@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='djangorelishblog',
-    version='1.0.0a30',
+    version='1.0.0a29',
     packages=find_packages(),
     include_package_data=True,
     license='BSD License',  # example license
@@ -34,6 +34,5 @@ setup(
     install_requires=[
         'django-markdownx',
         'django_markdown2',
-        'django-akismet-comments',
     ],
 )

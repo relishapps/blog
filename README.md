@@ -12,29 +12,26 @@ djangorelishblog is a simple Django app to have a blog on your site.
 INSTALLED_APPS = [
     ...
     'django.contrib.humanize',
-    'django_akismet_comments',
     'djangorelishblog',
     'markdownx',
 ]
 ```
 
-2. Add `AKISMET_API_KEY` and your Akismet API Key to your settings file.
-
-3. Include the **djangorelishblog** and **mardownx** URLconf in your project urls.py:
+2. Include the **djangorelishblog** and **mardownx** URLconf in your project urls.py:
 
 ```python
 url(r'^blog/', include('djangorelishblog.urls')),
 url(r'^markdownx/', include('markdownx.urls')),
 ```
 
-4. Run `python manage.py collectstatic` to setup **markdownx**.
+3. Run `python manage.py collectstatic` to setup **markdownx**.
 
-5. Run `python manage.py migrate` to create the blog models.
+4. Run `python manage.py migrate` to create the blog models.
 
-6. Start the development server and visit http://127.0.0.1:8000/admin/
+5. Start the development server and visit http://127.0.0.1:8000/admin/
    to create a blog (you'll need the Admin app enabled).
 
-7. Visit http://127.0.0.1:8000/blog/ to view the blog.
+6. Visit http://127.0.0.1:8000/blog/ to view the blog.
 
 
 ### Models
@@ -84,7 +81,7 @@ Has the fields `author_name`, `author_email`, `author_website`, and `body`.
 ### Views
 
 #### BlogView
-`BlogView` is a subclass of `django.views.generic.list.ListView` which diplays all `Post` objects that are `published`. It sets the `context_object_name` to `'posts'` so you can refer to `{{ posts }}` in your template, and uses the standard `blog.html` template shipped with `djangorelishblog`.
+`BlogView` is a subclass of django.views.generic.list.ListView` which diplays all `Post` objects that are `published`. It sets the `context_object_name` to `'posts'` so you can refer to `{{ posts }}` in your template, and uses the standard `blog.html` template shipped with `djangorelishblog`.
 
 #### BlogPostView
 `BlogPostView` is a subclass of `django.views.generic.base.View` which displays a single `Post` object, a `CommentForm` and all of the comments related to that `Post`.

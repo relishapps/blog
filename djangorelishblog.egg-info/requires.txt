@@ -1,3 +1,2 @@
 django-markdownx
 django_markdown2
-django-akismet-comments

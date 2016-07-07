@@ -4,6 +4,9 @@ from django.core.urlresolvers import reverse
 
 from markdownx.models import MarkdownxField
 
+from django.contrib.comments.moderation import moderator
+from django_akismet_comments import AkismetModerator
+
 
 class PostQuerySet(models.QuerySet):
     def published(self):
@@ -48,3 +51,6 @@ class Comment(models.Model):
 
     def __unicode__(self):
         return '%s on %s' % (self.author_name, self.created_on)
+
+
+moderator.register(Comment, AkismetModerator)
